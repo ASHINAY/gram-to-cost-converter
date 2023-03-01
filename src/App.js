@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [result, setResult] = useState(0);
 
-  const onSearchBtnclick = () => {
+  const onCalculateBtnclick = () => {
     
     let calculatedResult = 0;
     if (calculationType === 'Price') {
@@ -40,7 +40,7 @@ function App() {
         <div className="Container2">Enter Price</div>
         <input type='text' placeholder='Enter Price' style={{ height: '40px',fontSize:'20px' }} ></input>
 
-        <button onClick={onSearchBtnclick} style={{ backgroundColor: '#F16767', height: '45px', color: 'white', justifyContent: 'center', margin: '10px 0',fontSize:'20px' }}>Calculate</button>
+        <button onClick={onCalculateBtnclick} style={{ backgroundColor: '#F16767', height: '45px', color: 'white', justifyContent: 'center', margin: '10px 0',fontSize:'20px' }}>Calculate</button>
 
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
