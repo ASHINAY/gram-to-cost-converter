@@ -6,15 +6,7 @@ function App() {
 
   const onCalculateBtnclick = () => {
     
-    let calculatedResult = 0;
-    if (calculationType === 'Price') {
-      calculatedResult = input * price;
-    } else if (calculationType === 'gramsToCost') {
-      calculatedResult = (input / 1000) * price;
-    } else if (calculationType === 'costToGrams') {
-      calculatedResult = (input / price) * 1000;
-    }
-    setResult(calculatedResult);
+   
   }
 
   
