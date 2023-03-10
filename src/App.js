@@ -48,44 +48,35 @@ function App() {
         <div style={{ height: '1px', background: 'gray' }}></div>
         <div className="Container3">Choose One to Calculate</div>
         <select name="calculationType" style={{ height: '40px', fontSize: '20px' }}
-
           value={calculationType}
-          onChange={(e) => setCalculationType(e.target.value)}
-        >
+          onChange={(e) => setCalculationType(e.target.value)}>
           <option value="Price">Price</option>
           <option value="grams">Grams</option>
           <option value="KiloGrams"> KiloGrams</option>
         </select>
-
         <div className="Container2"> Enter {calculationType === "Price"
           ? "Price"
           : calculationType === "grams"
             ? "Grams"
-          
-            :"KiloGrams"
-          }</div>
+            : "KiloGrams"
+        }</div>
         <input type='text'
           placeholder={`Enter ${calculationType === "Price"
-              ? "Price"
-              : calculationType === "grams"
-                ? "Grams"
-                : "KiloGrams"
+            ? "Price"
+            : calculationType === "grams"
+              ? "Grams"
+              : "KiloGrams"
             }`}
           style={{ height: "40px", fontSize: "20px" }}
           onChange={(e) => {
             onChangePrice(e);
           }}
         ></input>
-
-
         <button onClick={onCalculateBtnclick} style={{ backgroundColor: '#F16767', height: '45px', color: 'white', justifyContent: 'center', margin: '10px 0', fontSize: '20px' }}>Calculate</button>
-
       </div>
       {showResult &&
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-
           <div className='subContainer' >
-
             <span style={{ color: '#FFFFFF', fontWeight: '400', fontSize: '30px' }}> {result}</span>
           </div>
         </div>
@@ -93,5 +84,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
