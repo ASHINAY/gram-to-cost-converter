@@ -17,8 +17,7 @@ function App() {
     } else if (calculationType === "KiloGrams") {
       result = (price / priceof1kg) + " Kg ";
     }
-
-    setResult(result);
+   setResult(result);
     setShowResult(true);
   }
 
