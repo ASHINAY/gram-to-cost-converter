@@ -5,10 +5,12 @@ function App() {
   const [result, setResult] = useState(0);
   const [priceof1kg, setPriceof1kg] = useState("");
   const [price, setPrice] = useState("");
+  const [showResult, setShowResult] = useState(false);
 
   const onCalculateBtnclick = () => {
-    var gram = (1000 / priceof1kg) * price;
-    setResult(gram);
+    var result = (1000 / priceof1kg) * price + " gram ";
+    setResult(result);
+     setShowResult(true);
   }
 
   const onChangePriceof1kg = (e) => {
@@ -50,13 +52,15 @@ function App() {
         <button onClick={onCalculateBtnclick} style={{ backgroundColor: '#F16767', height: '45px', color: 'white', justifyContent: 'center', margin: '10px 0', fontSize: '20px' }}>Calculate</button>
 
       </div>
+      {showResult &&
       <div style={{ display: 'flex', justifyContent: 'center' }}>
 
-        <div className='subContainer'>
-          {/* <div className='circle'>{result.toFixed(2)}</div> */}
+        <div className='subContainer' >
+          
           <span style={{ color: '#FFFFFF', fontWeight: '400', fontSize: '30px' }}> {result}</span>
         </div>
       </div>
+}
     </div>
   );
 }
