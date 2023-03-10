@@ -12,9 +12,9 @@ function App() {
     let result = 0;
     if (calculationType === "Price") {
       result = (1000 / priceof1kg) * price + " cost ";
-    } else if (calculationType === "gramsToCost") {
+    } else if (calculationType === "grams") {
       result = (priceof1kg / 1000) * price + " gram ";
-    } else if (calculationType === "costToGrams") {
+    } else if (calculationType === "costtogram") {
       result = (price / priceof1kg) + " Kg ";
     }
 
@@ -53,19 +53,21 @@ function App() {
           onChange={(e) => setCalculationType(e.target.value)}
         >
           <option value="Price">Price</option>
-          <option value="gramsToCost">Grams</option>
-          <option value="costToGrams"> KiloGrams</option>
+          <option value="grams">Grams</option>
+          <option value="Kilograms"> KiloGrams</option>
         </select>
 
         <div className="Container2"> Enter {calculationType === "Price"
           ? "Price"
-          : calculationType === "gramsToCost"
+          : calculationType === "grams"
             ? "Grams"
-            : "KiloGrams"}</div>
+          
+            :"KiloGrams"
+          }</div>
         <input type='text'
           placeholder={`Enter ${calculationType === "Price"
               ? "Price"
-              : calculationType === "gramsToCost"
+              : calculationType === "grams"
                 ? "Grams"
                 : "KiloGrams"
             }`}
