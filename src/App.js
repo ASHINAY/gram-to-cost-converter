@@ -14,7 +14,7 @@ function App() {
       result = (1000 / priceof1kg) * price + " cost ";
     } else if (calculationType === "grams") {
       result = (priceof1kg / 1000) * price + " gram ";
-    } else if (calculationType === "costtogram") {
+    } else if (calculationType === "KiloGrams") {
       result = (price / priceof1kg) + " Kg ";
     }
 
@@ -54,7 +54,7 @@ function App() {
         >
           <option value="Price">Price</option>
           <option value="grams">Grams</option>
-          <option value="Kilograms"> KiloGrams</option>
+          <option value="KiloGrams"> KiloGrams</option>
         </select>
 
         <div className="Container2"> Enter {calculationType === "Price"
