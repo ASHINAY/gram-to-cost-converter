@@ -6,11 +6,20 @@ function App() {
   const [priceof1kg, setPriceof1kg] = useState("");
   const [price, setPrice] = useState("");
   const [showResult, setShowResult] = useState(false);
+  const [calculationType, setCalculationType] = useState("Price");
 
   const onCalculateBtnclick = () => {
-    var result = (1000 / priceof1kg) * price + " gram ";
+    let result = 0;
+    if (calculationType === "Price") {
+      result = (1000 / priceof1kg) * price + " cost ";
+    } else if (calculationType === "gramsToCost") {
+      result = (priceof1kg / 1000) * price + " gram ";
+    } else if (calculationType === "costToGrams") {
+      result = (price / priceof1kg) + " Kg ";
+    }
+
     setResult(result);
-     setShowResult(true);
+    setShowResult(true);
   }
 
   const onChangePriceof1kg = (e) => {
@@ -38,29 +47,47 @@ function App() {
         <div className="Container1" >Calculator</div>
         <div style={{ height: '1px', background: 'gray' }}></div>
         <div className="Container3">Choose One to Calculate</div>
-        <select name="calculationType" style={{ height: '40px', fontSize: '20px' }}>
+        <select name="calculationType" style={{ height: '40px', fontSize: '20px' }}
+
+          value={calculationType}
+          onChange={(e) => setCalculationType(e.target.value)}
+        >
           <option value="Price">Price</option>
           <option value="gramsToCost">Grams</option>
           <option value="costToGrams"> KiloGrams</option>
         </select>
 
-        <div className="Container2">Enter Price</div>
-        <input type='text' placeholder='Enter Price'
-          style={{ height: '40px', fontSize: '20px' }}
-          onChange={(e) => { onChangePrice(e) }} ></input>
+        <div className="Container2"> Enter {calculationType === "Price"
+          ? "Price"
+          : calculationType === "gramsToCost"
+            ? "Grams"
+            : "KiloGrams"}</div>
+        <input type='text'
+          placeholder={`Enter ${calculationType === "Price"
+              ? "Price"
+              : calculationType === "gramsToCost"
+                ? "Grams"
+                : "KiloGrams"
+            }`}
+          style={{ height: "40px", fontSize: "20px" }}
+          onChange={(e) => {
+            onChangePrice(e);
+          }}
+        ></input>
+
 
         <button onClick={onCalculateBtnclick} style={{ backgroundColor: '#F16767', height: '45px', color: 'white', justifyContent: 'center', margin: '10px 0', fontSize: '20px' }}>Calculate</button>
 
       </div>
       {showResult &&
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
 
-        <div className='subContainer' >
-          
-          <span style={{ color: '#FFFFFF', fontWeight: '400', fontSize: '30px' }}> {result}</span>
+          <div className='subContainer' >
+
+            <span style={{ color: '#FFFFFF', fontWeight: '400', fontSize: '30px' }}> {result}</span>
+          </div>
         </div>
-      </div>
-}
+      }
     </div>
   );
 }
