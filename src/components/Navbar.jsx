@@ -1,7 +1,8 @@
+import '../App.css';
+
 function Navbar({ projectName }) {
-  
   return (
-    <div>{projectName}</div>
+    <div className='App'>{projectName}</div>
   )
 }
 export default Navbar
