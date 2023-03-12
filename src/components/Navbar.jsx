@@ -1,11 +1,7 @@
-import React from 'react'
-
 function Navbar({ projectName }) {
   
   return (
-    <div className="App">
-      {projectName}
-    </div>
+    <div>{projectName}</div>
   )
 }
 export default Navbar
