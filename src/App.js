@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import Navbar from './Component/Navbar';
+import Navbar from './components/Navbar';
 
 function App() {
   const [result, setResult] = useState(0);
