@@ -54,12 +54,7 @@ function App() {
           <option value="Grams">Grams</option>
           <option value="KiloGrams"> KiloGrams</option>
         </select>
-        <div className="Container2"> Enter {calculationType == "Price"
-          ? "Price"
-          : calculationType == "Grams"
-            ? "Grams"
-            : "KiloGrams"
-        }</div>
+        <div className="Container2"> Enter {calculationType}</div>
         <input type='text'
           placeholder={`Enter ${calculationType == "Price"
             ? "Price"
