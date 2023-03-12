@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Navbar() {
+function Navbar({ projectName }) {
+  
   return (
     <div className="App">
-      Gram To Cost Converter
+      {projectName}
     </div>
   )
 }

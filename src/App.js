@@ -8,7 +8,7 @@ function App() {
   const [price, setPrice] = useState("");
   const [showResult, setShowResult] = useState(false);
   const [calculationType, setCalculationType] = useState("Price");
-
+  const projectName = "Gram To Cost Converter";
   const onCalculateBtnclick = () => {
     let result = 0;
     if (calculationType === "Price") {
@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div style={{ backgroundColor: "#fadfe3", height: '100vh' }}>
-      <Navbar/>
+      <Navbar projectName={projectName}/>
       <div className="Container">
         <h style={{ fontWeight: '500' }}>BasicDetails</h>
         <div style={{ height: '1px', background: 'gray' }}></div>
