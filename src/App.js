@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import ResultComponent from './components/ResultComponent';
 
 function App() {
   const [result, setResult] = useState(0);
@@ -9,6 +10,8 @@ function App() {
   const [showResult, setShowResult] = useState(false);
   const [calculationType, setCalculationType] = useState("Price");
   const projectName = "Gram To Cost Converter";
+  const projectResult = result ;
+
   const onCalculateBtnclick = () => {
     let result = 0;
     if (calculationType === "Price") {
@@ -73,11 +76,7 @@ function App() {
         <button onClick={onCalculateBtnclick} style={{ backgroundColor: '#F16767', height: '45px', color: 'white', justifyContent: 'center', margin: '10px 0', fontSize: '20px' }}>Calculate</button>
       </div>
       {showResult &&
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div className='subContainer' >
-            <span style={{ color: '#FFFFFF', fontWeight: '400', fontSize: '30px' }}> {result}</span>
-          </div>
-        </div>
+        <ResultComponent projectResult = {result} />
       }
     </div>
   );
