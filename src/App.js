@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Navbar from './Component/Navbar';
 
 function App() {
   const [result, setResult] = useState(0);
@@ -17,7 +18,7 @@ function App() {
     } else if (calculationType === "KiloGrams") {
       result = (price / priceof1kg) + " Kg ";
     }
-   setResult(result);
+    setResult(result);
     setShowResult(true);
   }
 
@@ -33,9 +34,7 @@ function App() {
 
   return (
     <div style={{ backgroundColor: "#fadfe3", height: '100vh' }}>
-      <div className="App">
-        Gram To Cost Converter
-      </div>
+      <Navbar/>
       <div className="Container">
         <h style={{ fontWeight: '500' }}>BasicDetails</h>
         <div style={{ height: '1px', background: 'gray' }}></div>
