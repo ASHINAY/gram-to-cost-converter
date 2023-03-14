@@ -4,7 +4,6 @@ import CalculationComponent from './components/CalculationComponent';
 import Navbar from './components/Navbar';
 import ResultComponent from './components/ResultComponent';
 
-
 function App() {
   const [result, setResult] = useState(0);
   const [priceof1kg, setPriceof1kg] = useState("");
@@ -25,12 +24,10 @@ function App() {
     setResult(result);
     setShowResult(true);
   }
-
   const onChangePriceof1kg = (e) => {
     let typedValue = e.target.value;
     setPriceof1kg(typedValue);
   }
-
   const onChangePrice = (e) => {
     let typedValue = e.target.value;
     setPrice(typedValue);
@@ -39,13 +36,14 @@ function App() {
   return (
     <div style={{ backgroundColor: "#fadfe3", height: '100vh' }}>
       <Navbar projectName={projectName} />
-      <CalculationComponent  calculationType={setCalculationType}
-           onChangePriceof1kg={onChangePriceof1kg}
-           onChangePrice={onChangePrice}
-           onCalculateBtnclick={onCalculateBtnclick}
-           priceof1kg={priceof1kg}
-           price={price}/>
-      {showResult &&
+      <CalculationComponent calculationType={calculationType}
+        onChangePriceof1kg={onChangePriceof1kg}
+        onChangePrice={onChangePrice}
+        onCalculateBtnclick={onCalculateBtnclick}
+        setCalculationType={setCalculationType}
+        priceof1kg={priceof1kg}
+        price={price} />
+       {showResult &&
         <ResultComponent result={result} />
       }
     </div>
