@@ -1,15 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../App.css';
 
 function CalculationComponent(props) {
+  const [result, setResult] = useState(0);
+  const [priceof1kg, setPriceof1kg] = useState("");
+  const [price, setPrice] = useState("");
+  const [showResult, setShowResult] = useState(false);
+
   const {
     calculationType,
     setCalculationType,
     onChangePriceof1kg,
     onChangePrice,
     onCalculateBtnclick,
-     } = props;
+  } = props;
 
+  const handleCalculateBtnclick = () => {
+    let result = 0;
+    if (calculationType === "Price") {
+      result = (1000 / priceof1kg) * price + " cost ";
+    } else if (calculationType === "Grams") {
+      result = (priceof1kg / 1000) * price + " gram ";
+    } else if (calculationType === "KiloGrams") {
+      result = (price / priceof1kg) + " Kg ";
+    }
+    setResult(result);
+    setShowResult(true);
+  }
+  const handleChangePriceof1kg = (e) => {
+    let typedValue = e.target.value;
+    setPriceof1kg(typedValue);
+  }
+  const handleChangePrice = (e) => {
+    let typedValue = e.target.value;
+    setPrice(typedValue);
+  }
   return (
     <div className="Container">
       <h style={{ fontWeight: '500' }}>BasicDetails</h>
