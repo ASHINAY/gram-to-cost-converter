@@ -1,6 +1,7 @@
 import '../App.css';
 
-function ResultComponent({ result }) {
+function ResultComponent(props) {
+  const {result } = props ;
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <div className='subContainer' >

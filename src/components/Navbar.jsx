@@ -1,6 +1,7 @@
 import '../App.css';
 
-function Navbar({ projectName }) {
+function Navbar(props) {
+  const { projectName } = props;
   return (
     <div className='App'>{projectName}</div>
   )
