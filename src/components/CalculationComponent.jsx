@@ -2,20 +2,22 @@ import React, { useState } from 'react'
 import '../App.css';
 
 function CalculationComponent(props) {
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState("");
   const [priceof1kg, setPriceof1kg] = useState("");
   const [price, setPrice] = useState("");
   const [showResult, setShowResult] = useState(false);
-
+  const [calculationType, setCalculationType] = useState("Price");
   const {
-    calculationType,
-    setCalculationType,
-    onChangePriceof1kg,
-    onChangePrice,
-    onCalculateBtnclick,
+    //  calculationType,
+    // setCalculationType,
+    // onChangePriceof1kg,
+    // onChangePrice,
+    // onCalculateBtnclick,
+    // setShowResult,
+    // setResult,
   } = props;
 
-  const handleCalculateBtnclick = () => {
+  const onCalculateBtnclick = () => {
     let result = 0;
     if (calculationType === "Price") {
       result = (1000 / priceof1kg) * price + " cost ";
@@ -26,12 +28,13 @@ function CalculationComponent(props) {
     }
     setResult(result);
     setShowResult(true);
+    console.log("Ashi");
   }
-  const handleChangePriceof1kg = (e) => {
+  const onChangePriceof1kg = (e) => {
     let typedValue = e.target.value;
     setPriceof1kg(typedValue);
   }
-  const handleChangePrice = (e) => {
+  const onChangePrice = (e) => {
     let typedValue = e.target.value;
     setPrice(typedValue);
   }
