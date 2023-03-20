@@ -1,20 +1,17 @@
-import React, { useState } from 'react'
+import React  from 'react'
 import '../App.css';
 
 function CalculationComponent(props) {
-  const [result, setResult] = useState("");
-  const [priceof1kg, setPriceof1kg] = useState("");
-  const [price, setPrice] = useState("");
-  const [showResult, setShowResult] = useState(false);
-  const [calculationType, setCalculationType] = useState("Price");
+  
   const {
-    //  calculationType,
-    // setCalculationType,
-    // onChangePriceof1kg,
-    // onChangePrice,
-    // onCalculateBtnclick,
-    // setShowResult,
-    // setResult,
+    calculationType,
+    setCalculationType,
+    setPriceof1kg,
+    setPrice,
+    setShowResult,
+    setResult,
+    priceof1kg,
+    price,
   } = props;
 
   const onCalculateBtnclick = () => {

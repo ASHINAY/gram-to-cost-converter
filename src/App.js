@@ -6,7 +6,7 @@ import ResultComponent from './components/ResultComponent';
 
 function App() {
   const [result, setResult] = useState(0);
-  const [priceof1kg, setPriceof1kg] = useState("");
+  const [priceof1kg, setPriceof1Kg] = useState("");
   const [price, setPrice] = useState("");
   const [showResult, setShowResult] = useState(true);
   const [calculationType, setCalculationType] = useState("Price");
@@ -17,10 +17,12 @@ function App() {
       <Navbar projectName={projectName} />
       <CalculationComponent calculationType={calculationType}
         setCalculationType={setCalculationType}
-        priceof1kg={priceof1kg}
-        price={price}
+        setPriceof1kg={setPriceof1Kg}
+        setPrice={setPrice}
         setShowResult={setShowResult} 
-        setresult = {setResult}/>
+        setResult = {setResult}
+        priceof1kg = {priceof1kg}
+        price = {price}/>
        {showResult &&
         <ResultComponent result={result}/>
       }
