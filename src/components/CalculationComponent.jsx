@@ -1,8 +1,7 @@
-import React  from 'react'
+import React from 'react'
 import '../App.css';
 
 function CalculationComponent(props) {
-  
   const {
     calculationType,
     setCalculationType,
@@ -15,17 +14,17 @@ function CalculationComponent(props) {
   } = props;
 
   const onCalculateBtnclick = () => {
-    let result = 0;
+    let temp = 0;
     if (calculationType === "Price") {
-      result = (1000 / priceof1kg) * price + " cost ";
+      temp = (1000 / priceof1kg) * price;
     } else if (calculationType === "Grams") {
-      result = (priceof1kg / 1000) * price + " gram ";
+      temp = (priceof1kg / 1000) * price;
     } else if (calculationType === "KiloGrams") {
-      result = (price / priceof1kg) + " Kg ";
+      temp = (price / priceof1kg);
     }
-    setResult(result);
+    setResult(temp);
     setShowResult(true);
-    console.log("Ashi");
+    console.log(typeof temp);
   }
   const onChangePriceof1kg = (e) => {
     let typedValue = e.target.value;
