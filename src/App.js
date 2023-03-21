@@ -10,7 +10,7 @@ function App() {
   const [price, setPrice] = useState("");
   const [showResult, setShowResult] = useState(true);
   const [calculationType, setCalculationType] = useState("Price");
-  const [suffix, setSuffix] = useState("kg");
+  const [suffix, setSuffix] = useState("Rs");
   const projectName = "Gram To Cost Converter";
 
   return (
@@ -23,7 +23,8 @@ function App() {
         setShowResult={setShowResult}
         setResult={setResult}
         priceof1kg={priceof1kg}
-        price={price} />
+        price={price}
+        setSuffix={setSuffix} />
       {showResult &&
         <ResultComponent result={result} 
         suffix={suffix}/>

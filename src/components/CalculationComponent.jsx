@@ -11,15 +11,19 @@ function CalculationComponent(props) {
     setResult,
     priceof1kg,
     price,
+    setSuffix,
   } = props;
 
   const onCalculateBtnclick = () => {
     let temp = 0;
     if (calculationType === "Price") {
+      setSuffix("Rs");
       temp = (1000 / priceof1kg) * price;
     } else if (calculationType === "Grams") {
+      setSuffix("g");
       temp = (priceof1kg / 1000) * price;
     } else if (calculationType === "KiloGrams") {
+      setSuffix("Kg");
       temp = (price / priceof1kg);
     }
     setResult(temp);
@@ -49,8 +53,8 @@ function CalculationComponent(props) {
         value={calculationType}
         onChange={(e) => setCalculationType(e.target.value)}>
         <option value="Price">Price</option>
-        <option value="Grams">Grams</option>
-        <option value="KiloGrams"> KiloGrams</option>
+        <option value="Grams">grams</option>
+        <option value="KiloGrams"> Kilogram</option>
       </select>
       <div className="Container2"> Enter {calculationType}</div>
       <input type='text'
