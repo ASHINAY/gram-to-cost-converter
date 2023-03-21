@@ -17,7 +17,7 @@ function CalculationComponent(props) {
   const onCalculateBtnclick = () => {
     let temp = 0;
     if (calculationType === "Price") {
-      setSuffix("Rs");
+      setSuffix("grams~ kgs");
       temp = (1000 / priceof1kg) * price;
     } else if (calculationType === "Grams") {
       setSuffix("g");
