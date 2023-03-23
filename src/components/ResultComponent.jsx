@@ -7,7 +7,7 @@ function ResultComponent(props) {
   } = props;
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <div className='subContainer' >
+      <div className='subContainer'>
         <span style={{ color: '#FFFFFF', fontWeight: '400', fontSize: '30px' }}>{result.toFixed(0)}{suffix}</span>
       </div>
     </div>

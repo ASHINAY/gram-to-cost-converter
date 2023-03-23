@@ -8,7 +8,7 @@ function App() {
   const [result, setResult] = useState(0);
   const [priceof1kg, setPriceof1Kg] = useState("");
   const [price, setPrice] = useState("");
-  const [showResult, setShowResult] = useState(true);
+  const [showResult, setShowResult] = useState(false);
   const [calculationType, setCalculationType] = useState("Price");
   const [suffix, setSuffix] = useState("Rs");
   const projectName = "Gram To Cost Converter";
