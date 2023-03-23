@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/gram-to-cost-converter/static/css/main.f4a027c7.css",
-    "main.js": "/gram-to-cost-converter/static/js/main.6ac368c3.js",
+    "main.js": "/gram-to-cost-converter/static/js/main.a9906841.js",
     "static/js/787.a6af80cb.chunk.js": "/gram-to-cost-converter/static/js/787.a6af80cb.chunk.js",
     "index.html": "/gram-to-cost-converter/index.html",
     "main.f4a027c7.css.map": "/gram-to-cost-converter/static/css/main.f4a027c7.css.map",
-    "main.6ac368c3.js.map": "/gram-to-cost-converter/static/js/main.6ac368c3.js.map",
+    "main.a9906841.js.map": "/gram-to-cost-converter/static/js/main.a9906841.js.map",
     "787.a6af80cb.chunk.js.map": "/gram-to-cost-converter/static/js/787.a6af80cb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f4a027c7.css",
-    "static/js/main.6ac368c3.js"
+    "static/js/main.a9906841.js"
   ]
 }
