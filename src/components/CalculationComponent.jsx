@@ -43,7 +43,7 @@ function CalculationComponent(props) {
       <h style={{ fontWeight: '500' }}>BasicDetails</h>
       <div style={{ height: '1px', background: 'gray' }}></div>
       <div>Enter Price of 1 KG</div>
-      <input type='text'
+      <input type='text'placeholder='Enter Price of 1 Kg'
         style={{ height: '45px', fontSize: '20px' }}
         onChange={(e) => { onChangePriceof1kg(e) }}></input>
       <div className="Container1" >Calculator</div>
