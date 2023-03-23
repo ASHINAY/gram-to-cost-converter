@@ -26,8 +26,10 @@ function CalculationComponent(props) {
       setSuffix("Kg");
       temp = (price / priceof1kg);
     }
+   
     setResult(temp);
     setShowResult(true);
+    alert("please fill all the mandatory options");
     console.log(typeof temp);
   }
   const onChangePriceof1kg = (e) => {
@@ -43,7 +45,7 @@ function CalculationComponent(props) {
       <h style={{ fontWeight: '500' }}>BasicDetails</h>
       <div style={{ height: '1px', background: 'gray' }}></div>
       <div>Enter Price of 1 KG</div>
-      <input type='text'placeholder='Enter Price of 1 Kg'
+      <input type='text' placeholder='Enter Price of 1 Kg'
         style={{ height: '45px', fontSize: '20px' }}
         onChange={(e) => { onChangePriceof1kg(e) }}></input>
       <div className="Container1" >Calculator</div>
