@@ -15,6 +15,10 @@ function CalculationComponent(props) {
   } = props;
 
   const onCalculateBtnclick = () => {
+    if (priceof1kg.trim() === '' || price.trim() === '') {
+      alert('Please fill in all fields');
+      return;
+    }
     let temp = 0;
     if (calculationType === "Price") {
       setSuffix("grams~ kgs");
@@ -26,10 +30,8 @@ function CalculationComponent(props) {
       setSuffix("Kg");
       temp = (price / priceof1kg);
     }
-   
     setResult(temp);
     setShowResult(true);
-    alert("please fill all the mandatory options");
     console.log(typeof temp);
   }
   const onChangePriceof1kg = (e) => {
