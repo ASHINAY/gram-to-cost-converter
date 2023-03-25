@@ -13,8 +13,8 @@ function CalculationComponent(props) {
     price,
     setSuffix,
   } = props;
-
-  const onCalculateBtnclick = () => {
+  
+   const onCalculateBtnclick = () => {
     if (priceof1kg.trim() === '' || price.trim() === '') {
       alert('Please fill in all fields');
       return;
@@ -42,6 +42,7 @@ function CalculationComponent(props) {
     let typedValue = e.target.value;
     setPrice(typedValue);
   }
+  
   return (
     <div className="Container">
       <h style={{ fontWeight: '500' }}>BasicDetails</h>
@@ -55,13 +56,16 @@ function CalculationComponent(props) {
       <div className="Container3">Choose One to Calculate</div>
       <select name="calculationType" style={{ height: '40px', fontSize: '20px' }}
         value={calculationType}
-        onChange={(e) => setCalculationType(e.target.value)}>
+        onChange={(e) => {setCalculationType(e.target.value)
+        setPrice("")}}>
         <option value="Price">Price</option>
         <option value="Grams">grams</option>
         <option value="KiloGrams"> Kilogram</option>
       </select>
       <div className="Container2"> Enter {calculationType}</div>
+      
       <input type='text'
+      
         placeholder={`Enter ${calculationType == "Price"
           ? "Price"
           : calculationType == "Grams"
